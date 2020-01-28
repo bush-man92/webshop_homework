@@ -1,0 +1,27 @@
+<div class='card' *ngIf='product'>
+    <div class='card-header'>
+        {{pageTitle + ': ' + product.name}}
+    </div>
+    <div class='table-responsive'>
+        <table class='table'>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>About</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{product.name}}</td>
+                    <td>{{product.price | currency:'USD':'symbol':'1.2-2' }}</td>
+                    <td>{{product.about}}</td>
+                </tr>
+            </tbody>
+        </table>
+    <div class='card-footer'>
+        <button class='btn btn-outline-secondary' (click)='onBack()' style='width: 80px;'>
+            <i fa fa-chevron-left></i>Back
+        </button>
+    </div>
+</div>

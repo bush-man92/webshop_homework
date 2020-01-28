@@ -1,0 +1,23 @@
+<div class="card">
+    <div class="card-header">
+      {{pageTitle}}
+    </div>
+    <div class="card-body">
+      <div class="container-fluid">
+        <div class="form-group">
+          <label for="Address">Address</label>
+          <input id="Address"  [(ngModel)] = 'address' name="address" class="form-control"  required>
+          <div [hidden]="!show_address_error" class="alert alert-danger">{{error_message}}</div>
+        </div>
+        <div class="form-group">
+            <div class="btn-group">
+                <label class="btn btn-secondary" name="paying" [(ngModel)]="paying"
+                           btnRadio="Credit Card"  tabindex="0" role="button">Credit Card</label>
+                <label class="btn btn-secondary" name="paying" [(ngModel)]="paying"
+                           btnRadio="Cash on delivery" tabindex="0" role="button">Cash on delivery</label>
+            </div>
+        </div>
+        <button class="btn btn-primary" (click)="onClick(username, password)">Login</button>
+      </div>
+    </div>
+  </div>
