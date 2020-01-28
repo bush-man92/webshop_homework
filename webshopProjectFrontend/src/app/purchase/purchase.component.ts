@@ -14,5 +14,12 @@ export class PurchaseComponent {
   address: String;
   show_credit_card: boolean = false;
 
-  
+  onClick(){
+    if (this.paying = "Credit Card") {
+      this.show_credit_card = true;
+    }
+    else {
+      this.show_credit_card = false;
+    }
+  }
 }

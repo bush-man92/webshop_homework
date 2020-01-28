@@ -11,13 +11,23 @@
         </div>
         <div class="form-group">
             <div class="btn-group">
-                <label class="btn btn-secondary" name="paying" [(ngModel)]="paying"
+                <label class="btn btn-secondary" name="paying" (click)="onClick()" [(ngModel)]="paying"
                            btnRadio="Credit Card"  tabindex="0" role="button">Credit Card</label>
-                <label class="btn btn-secondary" name="paying" [(ngModel)]="paying"
+                <label class="btn btn-secondary" name="paying" (click)="onClick()" [(ngModel)]="paying"
                            btnRadio="Cash on delivery" tabindex="0" role="button">Cash on delivery</label>
             </div>
         </div>
-        <button class="btn btn-primary" (click)="onClick(username, password)">Login</button>
+        <div [hidden]="!show_credit_card">
+            <label for="Credit_card">Credit Card</label>
+            <input id="Credit_card"  [(ngModel)] = 'credit_card' name="credit_card" class="form-control"  required>
+            <div [hidden]="!show_credit_card_error" class="alert alert-danger">{{error_message}}</div>
+        </div>
+        <div [hidden]="!show_credit_card">
+            <label for="Security_number">Security Number</label>
+            <input id="Security_number"  [(ngModel)] = 'security_number' name="security_number" class="form-control"  required>
+            <div [hidden]="!show_credit_card_error" class="alert alert-danger">{{error_message}}</div>
+        </div>
+        <button class="btn btn-primary">Submit</button>
       </div>
     </div>
   </div>
