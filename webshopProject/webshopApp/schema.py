@@ -87,7 +87,6 @@ class AddToCartMutation(graphene.Mutation):
                     cart = Cart.objects.update(user_id = user_id, item_id = item_id, quantity = item.quantity - 1)
             else:
                 cart = Cart.objects.create(user_id = user_id, item_id = item_id, quantity = 1)
-        print(cart)
         return AddToCartMutation(cart = cart)
 
 class CreatePurchaseMutation(graphene.Mutation):
@@ -133,6 +132,5 @@ class Mutation(graphene.ObjectType):
     login = LoginMutation.Field()
     addToCart = AddToCartMutation.Field()
     createPurchase = CreatePurchaseMutation.Field()
-
 
 schema = graphene.Schema(query=Query, mutation=Mutation)

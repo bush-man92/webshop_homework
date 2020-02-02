@@ -12,6 +12,8 @@ import { RegisterComponent } from './auth/register.component'
 import { CartComponent } from 'src/app/cart/cart.component'
 import { PurchaseComponent } from './purchase/purchase.component';
 
+//graphql sve informacije prenosi s backenda na front
+
 @NgModule({
   declarations: [
     AppComponent,
